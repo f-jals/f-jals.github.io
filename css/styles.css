@@ -1,0 +1,525 @@
+:root {
+    --azul: #0000FF;     /* Nuevo azul solicitado */
+    --dorado: #ffffff;
+    --oscuro: #121212;
+    --claro: #F8F8F8;
+    --destacado: #FFD700;
+    --font-titulos: 'Playfair Display', serif;
+    --font-texto: 'Montserrat', sans-serif;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-texto);
+    color: var(--oscuro);
+    line-height: 1.6;
+    background-color: var(--claro);
+}
+
+/* Barra de noticias (Ticker) */
+.news-ticker {
+    background: var(--azul);
+    color: white;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-size: 14px;
+    position: relative;
+}
+
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#ticker-content {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+#ticker-content li {
+    margin-right: 2rem;
+    padding: 0.3rem 0;
+}
+
+#ticker-content a {
+    color: var(--dorado);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+#ticker-content a:hover {
+    opacity: 0.8;
+}
+
+/* Header y navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+    max-width: 100%;
+}
+
+/* Menú principal */
+#main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+#main-nav li {
+    position: relative;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: var(--oscuro);
+    padding: 0.8rem 1rem;
+    font-weight: 600;
+    display: block;
+    transition: all 0.3s;
+}
+
+#main-nav a:hover {
+    color: var(--azul);
+}
+
+/* Menús desplegables */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 0.8rem 1.5rem;
+    color: var(--oscuro);
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(0,0,255,0.05);
+    color: var(--azul);
+}
+
+/* Menú móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--oscuro);
+}
+
+/* Hero/Carrusel */
+.hero {
+    position: relative;
+    height: 80vh;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: white;
+    max-width: 600px;
+    padding: 2rem;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.slide-text h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: var(--font-titulos);
+    margin-bottom: 1rem;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background: var(--azul);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: var(--dorado);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--azul);
+}
+
+.prev {
+    left: 2rem;
+}
+
+.next {
+    right: 2rem;
+}
+
+/* Secciones */
+.section {
+    padding: 5rem 10%;
+}
+
+.section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-family: var(--font-titulos);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--azul);
+    margin: 1.5rem auto 0;
+}
+
+.dark-bg {
+    background: var(--oscuro);
+    color: white;
+}
+
+/* Grids */
+.obra-grid, .media-grid, .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.obra-card, .media-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.dark-bg .obra-card, .dark-bg .media-card {
+    background: rgba(255,255,255,0.05);
+}
+
+.obra-card:hover, .media-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.obra-card i, .media-card i {
+    font-size: 3rem;
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+}
+
+.btn-link {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: color 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--dorado);
+}
+
+/* Productos */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--azul);
+    padding: 0 1rem 1rem;
+    font-size: 1.1rem;
+}
+
+.product-card .btn {
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem;
+}
+
+/* Slider de marcas */
+.brands {
+    background: var(--claro);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.brand-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.brand-slider img {
+    scroll-snap-align: center;
+    height: 80px;
+    max-width: 150px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.brand-slider img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background: var(--oscuro);
+    color: white;
+    padding: 4rem 10% 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+    font-family: var(--font-titulos);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--dorado);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--dorado);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section {
+        padding: 4rem 7%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    #main-nav.active {
+        max-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background: rgba(0,0,0,0.03);
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .slide-text {
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        bottom: 15%;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 3rem 5%;
+    }
+
+    .news-ticker {
+        font-size: 12px;
+    }
+
+    .brand-slider {
+        gap: 1.5rem;
+    }
+
+    .brand-slider img {
+        height: 60px;
+    }
+}
+/* ===== EFECTOS HOVER DORADOS ===== */
+a:hover,
+#main-nav a:hover,
+.dropdown-menu a:hover,
+.social-links a:hover,
+.footer-col a:hover,
+#ticker-content a:hover {
+    color: #D4AF37 !important;
+    transition: color 0.3s ease;
+}
+
+/* Efecto adicional para menú desplegable */
+.dropdown-menu a:hover {
+    background-color: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Botones */
+.btn:hover {
+    background-color: #D4AF37 !important;
+    color: #121212 !important;
+    border-color: #D4AF37 !important;
+}

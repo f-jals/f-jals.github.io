@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Juan Alejhandro Lezama Suescun | Obras</title>
+    <meta name="description" content="Difusión de obra artística, literaria, investigaciones y proyectos multidisciplinarios.">
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de noticias dinámica -->
+    <div class="news-ticker">
+        <span> </span>
+        <div class="ticker-container">
+            <ul id="ticker-content">
+                <li><a href="#">🎙️ Nuevo episodio del "Arte en Mí"</a></li>
+                <li><a href="#">📅 Taller de escritura japonesa</a></li>
+                <li><a href="#">🖼️ Exposición "Ojos De Color"</a></li>
+                <li><a href="#">🌼 Poesía "Café o Chocolate"</a></li>
+                <li><a href="#">👨‍🏫 Charla "la Fundación y la cultura"</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header/Nav -->
+    <header>
+        <div class="logo">
+            <img src="img/logo-fundacion.png" alt="Fundación Juan Alejhandro Lezama Suescun">
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#obra">Obra <i class="#"></i></a>
+                    
+                </li>
+                <li><a href="#tienda">Tienda</a></li>
+                
+                </li>
+                <li><a href="#media">Multimedia</a></li>
+                
+                <li><a href="https://paypal.me/juanlezamaofficial">Donar <i class="fas fa-heart" style="color: red;"></i></a></li>
+            </ul>
+        </nav>
+        <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+
+    <!-- Hero Section (Carrusel) -->
+    <section class="hero" id="inicio">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="img/hero-arte.jpg" alt="Exposición de Arte">
+                <div class="slide-text">
+                    <h1>Explora mi nueva colección pictórica</h1>
+                    <a href="#obra" class="btn">Ver Galería</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/hero-musica.jpg" alt="Concierto">
+                <div class="slide-text">
+                    <h1>Escucha mi último álbum conceptual</h1>
+                    <a href="#media" class="btn">Ir a la Radio</a>
+                </div>
+            </div>
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Sección Obra Multidisciplinaria -->
+    <section id="obra" class="section">
+        <h2>Obra de la fundación</h2>
+        <div class="obra-grid">
+            <div class="obra-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Arte Visual</h3>
+                <p>Pintura, escultura y arte digital.</p>
+                <a href="#arte" class="btn-link">Ver más →</a>
+            </div>
+            <div class="obra-card">
+                <i class="fas fa-music"></i>
+                <h3>Música</h3>
+                <p>Discografía completa y partituras.</p>
+                <a href="#musica" class="btn-link">Escuchar →</a>
+            </div>
+            <div class="obra-card">
+                <i class="fas fa-book"></i>
+                <h3>Literatura</h3>
+                <p>Novelas, ensayos y poesía.</p>
+                <a href="#literatura" class="btn-link">Leer →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Multimedia Integrada -->
+    <section id="media" class="section dark-bg">
+        <h2>Contenido Multimedia</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <i class="fas fa-podcast"></i>
+                <h3>Podcast</h3>
+                <p>¡Nuevos Episodios!</p>
+                <a href="#podcast" class="btn">Escuchar</a>
+            </div>
+            <div class="media-card">
+                <i class="fas fa-tv"></i>
+                <h3>TV</h3>
+                <p>Documentales y entrevistas</p>
+                <a href="#tv" class="btn">Ver Canal</a>
+            </div>
+            <div class="media-card">
+                <i class="fas fa-microphone"></i>
+                <h3>Radio</h3>
+                <p>¡Transmisiones en vivo!</p>
+                <a href="#radio" class="btn">Sintonizar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tienda -->
+    <section id="tienda" class="section">
+        <h2>Tienda</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="productos/libro.jpg" alt="Libro">
+                <h3>¡La bendición del despertar!-</h3>
+                <p class="price">$14.99 USD</p>
+                <button class="btn">Comprar</button>
+            </div>
+            <div class="product-card">
+                <img src="productos/vinilo.jpg" alt="Álbum Musical">
+                <h3>MEZTIZO álbum discográfico</h3>
+                <p class="price">$9.99 USD</p>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Marcas -->
+    <section class="brands">
+        <h2>Proyectos de la fundación</h2>
+        <div class="brand-slider">
+            <img src="img/marca1.png" alt="Marca 1">
+            <img src="img/marca2.png" alt="Marca 2">
+            <img src="img/marca3.png" alt="Marca 3">
+            <a href="https://www.instagram.com/elcomerciodejuan"> <img src="img/marca4.png" alt="Marca 4"></a>
+            <img src="img/marca5.png" alt="Marca 5">
+            <a href="https://venezuelafolkmusic.blogspot.com/"> <img src="img/marca6.png" alt="Marca 6"></a>
+            <img src="img/marca7.png" alt="Marca 7">
+            <a href="https://juanlezamaofficial.github.io/cuidadohumano/"> <img src="img/marca8.png" alt="Marca 8"></a>
+            <img src="img/marca9.png" alt="Marca 9">
+            <img src="img/marca10.png" alt="Marca 10">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Sobre nosotros</h3>
+                <p>Nos dedicamos al desarrollo cultural de la humanidad a través de la obra de Juan A. Lezama S.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>licdo.juanlezama@gmail.com</p>
+                <p>+58 (426) 577-0099</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>APÓYANOS</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/JuanLezamaOfficial"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/juanlezamaofficial"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/c/Juanlezama"><i class="fab fa-youtube"></i></a>
+                    <a href="https://creators.spotify.com/pod/profile/juanlezama"><i class="fab fa-spotify"></i></a>
+                    <a href="https://medium.com/@juanlezama"><i class="fab fa-medium"></i></a>
+                    <a href="https://www.linkedin.com/in/juanlezama"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://paypal.me/juanlezamaofficial"><i class="fab fa-paypal"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Fundación Juan Alejhandro Lezama Suescun. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

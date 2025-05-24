@@ -1,0 +1,86 @@
+:root {
+    --azul: #0000FF;     /* Nuevo azul solicitado */
+    --dorado: #D4AF37;
+    --oscuro: #121212;
+    --claro: #F8F8F8;
+    --destacado: #FFD700;
+    --font-titulos: 'Playfair Display', serif;
+    --font-texto: 'Montserrat', sans-serif;
+}
+
+/* Menú móvil corregido */
+#main-nav {
+    transition: all 0.3s ease;
+}
+
+#main-nav.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+#main-nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+#main-nav.active ul {
+    display: flex !important;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--oscuro);
+    cursor: pointer;
+}
+
+/* Nueva paleta aplicada */
+.news-ticker {
+    background: var(--azul);
+}
+
+.btn {
+    background: var(--azul);
+}
+
+.btn:hover {
+    background: var(--dorado);
+}
+
+.section h2::after {
+    background: var(--azul);
+}
+
+.obra-card i, .media-card i {
+    color: var(--azul);
+}
+
+/* Media queries para móvil */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #main-nav ul {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background: rgba(0,0,0,0.05);
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
